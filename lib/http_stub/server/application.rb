@@ -62,6 +62,7 @@ module HttpStub
       end
 
       get "/http_stub/scenarios/:name" do
+        binding.pry
         haml :scenario, {}, scenario: @scenario_registry.find(params[:name], logger)
       end
 
@@ -100,6 +101,10 @@ module HttpStub
 
         def h(text)
           Rack::Utils.escape_html(text)
+        end
+
+        def pretty_json(text)
+          JSON.pretty_generate(JSON.parse(text))
         end
 
       end

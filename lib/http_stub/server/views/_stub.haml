@@ -1,18 +1,10 @@
-%table
-  %tr
-    %td Request:
-    %td=partial :request, locals: { request: the_stub }
-  %tr
-    %td Response:
-    %td
-      %table
-        =partial :response, locals: { response: the_stub.response }
-        %tr
-          %td Delay:
-          %td=h(the_stub.response.delay_in_seconds)
-  %tr
-    %td Triggers:
-    %td
-      - the_stub.triggers.each do |trigger|
-        = partial :stub, locals: { the_stub: trigger }
-        %br
+%h3 Request
+= partial :request, locals: { request: the_stub }
+%h3 Response
+=partial :response, locals: { response: the_stub.response }
+%h3 Triggers
+- the_stub.triggers.each do |trigger|
+  = partial :stub, locals: { the_stub: trigger }
+  %br
+
+

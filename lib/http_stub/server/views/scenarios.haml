@@ -1,9 +1,11 @@
-%h1 Scenarios
-%table{ class: :scenarios }
-  - scenarios.each do |scenario|
-    %tr
-      %td= scenario.name
-      %td
-        %a{ href: scenario.uri, class: :scenario } Activate
-      %td
-        %a{ href: scenario.detail_uri, class: :scenario } View Detail
+%header
+  %h1 Scenarios
+%section
+  %table{ class: :scenarios }
+    - scenarios.each do |scenario|
+      %tr
+        %td.name= scenario.name
+        %td
+          %a{ href: scenario.uri, class: [:scenario, :link] } Activate
+        %td
+          %a{ href: scenario.detail_uri, class: [:scenario, :link] } View Detail

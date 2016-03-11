@@ -1,10 +1,44 @@
-table
-  :border 1px solid black
+$color_highlight: #D7B2EA
+$color_background: #EEEEEE
+$color_content_bg: white
+$color_dark_border: grey
+$color_border: lightgrey
+$color_font: black
+$color_peach: #FFF6EF
 
-table
-  table
-    :border 1px solid grey
+body
+  :background $color_background
+  :font-family "Helvetica Neue", Helvetica, Arial, sans-serif
+
+header
+  :padding-left 1rem
+
+section
+  :border-radius 10px
+  :background white
+  :padding 1rem
+  :display inline-block
 
 table.scenarios
-  tr:hover
-    :background lightgray
+  :padding 1rem
+  :border-collapse collapse
+  tr
+    :background $color_content_bg
+    td
+      :padding 1rem
+      :border-bottom 1px solid $color_border
+      &.name
+        :font-weight bold
+
+a.link
+  :border 1px solid $color_dark_border
+  :border-radius 3px
+  :padding 0.5rem
+  :text-decoration none
+  :color $color_font
+  &:hover
+    :background $color_highlight
+
+
+table.scenario
+

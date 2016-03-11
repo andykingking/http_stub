@@ -8,7 +8,7 @@ module HttpStub
           @id               = id
           @status           = args[:status] || ""
           @headers          = (args[:headers] || {}).with_indifferent_and_insensitive_access
-          @body             = args[:body]
+          @body             = args.has_key?(:json) ? args[:json].to_json : args[:body]
           @delay_in_seconds = args[:delay_in_seconds] || ""
         end
 

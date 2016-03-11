@@ -1,9 +1,15 @@
-%tr
-  %td Status:
-  %td=response.status
+%table
   %tr
-    %td Headers:
+    %td.title Status:
+    %td=response.status
+  %tr
+    %td.title Headers:
     %td=h(response.headers)
   %tr
-    %td Body:
-    %td=partial "#{response.type}_response".to_sym, locals: { response: response }
+    %td.title Body:
+    %td
+      %pre
+        %code=partial "#{response.type}_response".to_sym, locals: { response: response }
+  %tr
+    %td.title Delay:
+    %td=h(response.delay_in_seconds)
