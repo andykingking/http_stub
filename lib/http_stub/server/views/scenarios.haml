@@ -5,9 +5,9 @@
     - scenarios.each do |scenario|
       %tr
         %td{ class: ["scenario_name", "header-rule"] }= scenario.name
-        %td{ class: "header-rule" }
+        %td{ class: ["header-rule", "button-width"] }
           %a{ href: session_uri(scenario.links.activate), class: [:scenario, :link, :activate_scenario], data: { name: scenario.name } } Activate
-        %td{ class: "header-rule" }
+        %td{ class: ["header-rule", "button-width"] }
           %a{ href: session_uri(scenario.links.detail), class: [:scenario, :link, :view_scenario] } View Detail
 :javascript
   postLink("a.activate_scenario", "Activated");
