@@ -1,7 +1,8 @@
 %header
   %h1= scenario.name
 %section
-  %a{ href: session_uri(scenario.links.activate), class: [:scenario, :link, :activate_scenario], data: { name: scenario.name } } Activate
+  .button-width
+    %a{ href: session_uri(scenario.links.activate), class: [:scenario, :link, :activate_scenario], data: { name: scenario.name } } Activate
   %h2 Stubs
   - scenario.stubs.each do |the_stub|
     = partial :stub, locals: { the_stub: the_stub }
